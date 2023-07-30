@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useUserStore } from '@/stores/user'
 const userStore = useUserStore();
+const router = useRouter();
 
 const currentStep = ref(1);
 
@@ -32,17 +33,18 @@ const submitContactInfo = (data) => {
 const submitPrivateInformation = (data) => {
   userStore.setPrivateInformation(data);
     console.log(userStore.privateInformation)
-  nextStep();
+  userStore.submitFormDataToAPI()
+  router.push('/thanks')
 };
 </script>
 
 <template>
-    <div class="home">
-    <div class="container mx-auto flex justify-center">
-        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="home relative">
+      <div class="container mx-auto flex justify-center">
+        <div class="small-container">
             <PartialsInvesmentCount 
-            v-if="currentStep === 1" 
-            @submit="submitInvesmentCount"
+              v-if="currentStep === 1" 
+              @submit="submitInvesmentCount"
             />
             <PartialsContactInfo 
                 v-if="currentStep === 2"
@@ -52,21 +54,36 @@ const submitPrivateInformation = (data) => {
                 v-if="currentStep === 3"
                 @submit="submitPrivateInformation"
             />
+             <div class="buttons-group flex  justify-between">
+              <SharedGlobalBtn
+                  btnType="outline-color"
+                  @click="prevStep" 
+                  :disabled="currentStep === 1"
+                >
+                  Predošlí krok
+              </SharedGlobalBtn>
+            </div>
         </div>
-
-            <button @click="prevStep" :disabled="currentStep === 1">Previous</button>
-            <button @click="nextStep" :disabled="currentStep === 3">Next</button>
-        </div>
+      </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .home {
-    padding-top: 120px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     .container {
         flex-direction: column;
         align-items: center;
     }
+
+    @media (max-width: 560px) {
+      padding-top: 120px;
+    }
 }
 
+.buttons-group {
+  width: 100%;
+  margin-top: 32px;
+}
 </style>

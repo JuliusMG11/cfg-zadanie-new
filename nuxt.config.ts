@@ -11,6 +11,15 @@ export default defineNuxtConfig({
         '@/assets/scss/main.scss',
         '@/assets/css/main.css',
     ],
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@import "@/assets/scss/base/_variables.scss";',
+                },
+            },
+        },
+    },
     postcss: {
         plugins: {
             tailwindcss: {},

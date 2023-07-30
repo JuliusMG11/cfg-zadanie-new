@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "invesmentCount": {
+        "price": "1669368"
+      },
+      "contactInfo": {
+        "name": "Janko Hrasko",
+        "telNumber": "088 882 222",
+        "email": "info@gmail.com"
+      },
+      "privateInformation": {
+        "birthNumber": "23232",
+        "idCardNumber": "32323",
+        "address": "adreasa",
+        "bankAccountNumber": "231232323",
+        "gdpr": true
+      },
+      "id": 1
+    },
+    {
+      "invesmentCount": {
+        "price": "1904376"
+      },
+      "contactInfo": {
+        "name": "John Doe",
+        "telNumber": "434 434 323",
+        "email": "info@gmail.com"
+      },
+      "privateInformation": {
+        "birthNumber": "4343434",
+        "idCardNumber": "343434",
+        "address": "adresa 24",
+        "bankAccountNumber": "645645",
+        "gdpr": true
+      },
+      "id": 2
+    },
+    {
+      "invesmentCount": {
+        "price": "1004862"
+      },
+      "contactInfo": {
+        "name": "Last Test Name",
+        "telNumber": "434 434 423",
+        "email": "info@gmail.com"
+      },
+      "privateInformation": {
+        "birthNumber": "2323223",
+        "idCardNumber": "232323",
+        "address": "adresa 24",
+        "bankAccountNumber": "2343234234",
+        "gdpr": true
+      },
+      "id": 3
+    }
+  ]
+}
