@@ -24,11 +24,11 @@
       v-model="price"
     />
     <SharedErrorMessage v-show="errorMessage">
-      Prosím vypľnte výšku investície
+      Prosím vypľnte výšku investície.
     </SharedErrorMessage>
     <SharedGlobalBtn class="mt-4">
      Potvrdit a přejít na další krok
-   </SharedGlobalBtn>
+    </SharedGlobalBtn>
   </form>
 </div>
 </template>

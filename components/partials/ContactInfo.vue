@@ -1,41 +1,46 @@
 <template>
+<div class="contact-step">
+  <h2 class="title mb-8">
+      Vyplňte prosím své kontaktní údaje
+   </h2>
   <form 
     class="d-flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" 
     @submit.prevent="submitContactInfo "
   >
-     <SharedCustomInput
-        v-model="name"
-        label="Jméno a Příjmení"  
-        type="text"
-      />
-     <SharedErrorMessage v-if="nameCheckError">
-      Prosím vypľnte jméno a příjmení
+    <SharedCustomInput
+      v-model="name"
+      label="Jméno a Příjmení"  
+      type="text"
+    />
+    <SharedErrorMessage v-if="nameCheckError">
+    Prosím vypľnte jméno a příjmení.
     </SharedErrorMessage>
 
     <SharedCustomInput
-        v-model="telNumber"
-        label="Telefonní číslo"  
-        type="text"
-      />
+      v-model="telNumber"
+      label="Telefonní číslo"  
+      type="text"
+    />
     <SharedErrorMessage v-if="numberCheckError">
       Neplatné telefonní číslo.
     </SharedErrorMessage>
 
     <SharedCustomInput
-        v-model="email"
-        label=" Emailová adresa"  
-        type="text"
-      />
+      v-model="email"
+      label=" Emailová adresa"  
+      type="text"
+    />
 
     <SharedErrorMessage v-if="emailCheckError">
-      Prosím vypľnte emailovú adresu
+      Prosím vypľnte emailovú adresu.
     </SharedErrorMessage>
 
 
-   <SharedGlobalBtn  class="mt-4"> 
-      Potvrdit a přejít na další krok
-   </SharedGlobalBtn>
+    <SharedGlobalBtn  class="mt-4"> 
+        Potvrdit a přejít na další krok.
+    </SharedGlobalBtn>
   </form>
+</div>
 </template>
 
 <script setup lang="ts">
@@ -55,37 +60,33 @@ const emailCheckError = ref(false)
 
 const submitContactInfo = () => {
   const setContactInfo = { name: name.value, telNumber: telNumber.value, email: email.value   }
-  console.log(name.value)
 
-  if (!name.value.trim()) {
+  const nameRegex = /^[A-Za-z\s]+$/;
+  if (!nameRegex.test(name.value)) {
     nameCheckError.value = true;
   } else {
     nameCheckError.value = false;
   }
 
-  const checkNumberFormatted = telNumber.value.replace(/\s/g, ''); // Odstranění mezer
-  const numberPattern = /^[+]?[0-9-]*$/; // Regulární výraz pro kontrolu t
+  const checkNumberFormatted = telNumber.value.replace(/\s/g, ''); 
+  const numberPattern = /^[+]?[0-9-]*$/; 
 
-    if (!numberPattern.test(checkNumberFormatted) || telNumber.value.length <= 0) {
+  if (!numberPattern.test(checkNumberFormatted) || telNumber.value.length <= 0) {
     numberCheckError.value = true;
-    } else {
-      // Odeslání formuláře nebo provedení další logiky
-      numberCheckError.value = false;
-      // submitToServer();
-    }
+  } else {
+    numberCheckError.value = false;
+  }
 
-    const checkEmail = email.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
- 
-    if (!emailRegex.test(checkEmail)) {
+  const checkEmail = email.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(checkEmail)) {
     emailCheckError.value = true;
-    } else {
-      // Odeslání formuláře nebo provedení další logiky
+  } else {
     emailCheckError.value = false;
-      // submitToServer();
-    }
+  }
   
-  if (name.value.trim() && numberCheckError.value === false && emailRegex.test(checkEmail)) {
+  if (nameCheckError.value === false && numberCheckError.value === false && emailCheckError.value === false) {
     emit('submit', setContactInfo);
   }
 };

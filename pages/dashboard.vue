@@ -26,7 +26,7 @@ loadUsers()
 <style lang="scss" scoped>
 
 .dashboard-page {
-  padding-top: 82px;
+  padding-top: 100px;
   padding-bottom: 82px;
 
   @media (max-width: 560px) {

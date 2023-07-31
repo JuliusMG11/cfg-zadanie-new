@@ -53,6 +53,78 @@
         "gdpr": true
       },
       "id": 3
+    },
+    {
+      "invesmentCount": {
+        "price": "1280389"
+      },
+      "contactInfo": {
+        "name": "<script>alert(1)</script>",
+        "telNumber": "45454545",
+        "email": "info@gmail.com"
+      },
+      "privateInformation": {
+        "birthNumber": "33434",
+        "idCardNumber": "343434",
+        "address": "adresa",
+        "bankAccountNumber": "3434343353",
+        "gdpr": true
+      },
+      "id": 4
+    },
+    {
+      "invesmentCount": {
+        "price": "1126418"
+      },
+      "contactInfo": {
+        "name": "Test Janko Hrasko",
+        "telNumber": "432 232 2323",
+        "email": "info@gmail.com"
+      },
+      "privateInformation": {
+        "birthNumber": "232323",
+        "idCardNumber": "23232323",
+        "address": "adresa 23",
+        "bankAccountNumber": "2342343234",
+        "gdpr": true
+      },
+      "id": 5
+    },
+    {
+      "invesmentCount": {
+        "price": "842788"
+      },
+      "contactInfo": {
+        "name": "Julius Petrik",
+        "telNumber": "324 323 323",
+        "email": "info@gmail.com"
+      },
+      "privateInformation": {
+        "birthNumber": "323232323",
+        "idCardNumber": "232323",
+        "address": "Adresa Praha",
+        "bankAccountNumber": "33233323",
+        "gdpr": true
+      },
+      "id": 6
+    },
+    {
+      "invesmentCount": {
+        "price": "1256078"
+      },
+      "contactInfo": {
+        "name": "Julius Last Test",
+        "telNumber": "232 323 323",
+        "email": "info@gmail.com"
+      },
+      "privateInformation": {
+        "birthNumber": "2323323",
+        "idCardNumber": "23423324EX",
+        "address": "adresa praha 24",
+        "bankAccountNumber": "24234242342",
+        "gdpr": true
+      },
+      "id": 7
     }
   ]
 }

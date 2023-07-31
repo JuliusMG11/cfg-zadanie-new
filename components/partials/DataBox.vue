@@ -31,6 +31,10 @@ const props = defineProps({
               <strong>Email</strong>
               <p>{{ user.contactInfo.email }}</p>
           </div>
+          <div class="item">
+              <strong>Adresa trvalého pobytu</strong>
+              <p>{{ user.privateInformation.address }}</p>
+            </div>
            <div class="item">
               <strong>Rodné číslo</strong>
               <p>{{ user.privateInformation.birthNumber }}</p>
@@ -38,10 +42,6 @@ const props = defineProps({
             <div class="item">
                 <strong>Číslo občanského průkazu</strong>
                 <p>{{ user.privateInformation.idCardNumber }}</p>
-            </div>
-            <div class="item">
-              <strong>Adresa trvalého pobytu</strong>
-              <p>{{ user.privateInformation.address }}</p>
             </div>
             <div class="item">
                 <strong>Číslo bankovního účtu</strong>

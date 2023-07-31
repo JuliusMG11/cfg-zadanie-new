@@ -14,7 +14,7 @@ export const useUserStore = defineStore('user', {
         email: '',
     },
     privateInformation: {
-        birthNumber: '',
+        birthNumber: 0,
         idCardNumber: '',
         address: '',
         bankAccountNumber:'',
@@ -28,7 +28,7 @@ export const useUserStore = defineStore('user', {
     setContactInfo(data: { name: string; telNumber: string; email: string }) {
       this.contactInfo = data;
     },
-    setPrivateInformation(data: { birthNumber: string; idCardNumber: number, string: string, bankAccountNumber: string, gdpr: boolean  }) {
+    setPrivateInformation(data: { birthNumber: number; idCardNumber: number, string: string, bankAccountNumber: string, gdpr: boolean  }) {
       this.privateInformation = data;
     },
 

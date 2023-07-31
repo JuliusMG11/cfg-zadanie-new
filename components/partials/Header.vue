@@ -12,9 +12,11 @@ onMounted(() => {
   <div :class="{ 'scrolled': isScrolled }" class="navigation fixed">
     <div class="container mx-auto">
         <div class="navigation-section flex  justify-between">
-             <div class="logo">
-                <img src="@/assets/img/logo.png" alt="">
-            </div>
+            <NuxtLink to="/">
+                <div class="logo">
+                    <img src="@/assets/img/logo.png" alt="">
+                </div>
+            </NuxtLink>
             <nav>
                 <ul class="pl-0 flex gap-8 items-center">
                     <li>
@@ -41,11 +43,16 @@ onMounted(() => {
     padding: 16px;
     z-index: 10;
     transition: all ease .3s;
+    border-bottom: 1px solid #ffffff88;
 
     a {
         font-size: 22px;
         color: $color-white;
         font-weight: 700;
+
+        &.router-link-active {
+            color: $color-primary;
+        }
 
         &:hover {
             color: $color-primary;
@@ -74,7 +81,7 @@ onMounted(() => {
 }
 
 .logo {
-    width: 200px;
+    width: 140px;
     height: auto;
     bottom: 16px;
     left: 16px;
@@ -95,5 +102,6 @@ onMounted(() => {
   background-color: rgba(6, 0, 68, 0.83);;
   transition: all ease .3s;
 }
+
 
 </style>

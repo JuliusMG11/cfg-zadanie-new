@@ -19,20 +19,17 @@ const prevStep = () => {
 
 const submitInvesmentCount = (data) => {
   userStore.setInvesmentCount(data);
-  console.log(userStore.invesmentCount)
   nextStep();
 };
 
 
 const submitContactInfo = (data) => {
   userStore.setContactInfo(data);
-  console.log(userStore.contactInfo)
   nextStep();
 };
 
 const submitPrivateInformation = (data) => {
   userStore.setPrivateInformation(data);
-    console.log(userStore.privateInformation)
   userStore.submitFormDataToAPI()
   router.push('/thanks')
 };
@@ -70,7 +67,7 @@ const submitPrivateInformation = (data) => {
 
 <style lang="scss" scoped>
 .home {
-    padding-top: 80px;
+    padding-top: 100px;
     padding-bottom: 80px;
     .container {
         flex-direction: column;
